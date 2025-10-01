@@ -1,75 +1,83 @@
-<!DOCTYPE html>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Infinigate • One Plant Campaign</title>
-  <meta name="description" content="Infinigate 'One Plant' campaign: grow one at home or donate one to a community space. Small acts, big impact." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Simple Page</title>
+  <style>
+    :root {
+      --bg: #0f172a;      /* slate-900 */
+      --card: #111827;    /* gray-900 */
+      --text: #e5e7eb;    /* gray-200 */
+      --muted: #9ca3af;   /* gray-400 */
+      --accent: #60a5fa;  /* blue-400 */
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1000px 600px at 10% 10%, #1f2937 0%, var(--bg) 40%),
+                  radial-gradient(1000px 600px at 90% 10%, #111827 0%, var(--bg) 40%);
+      color: var(--text);
+      display: grid; place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(720px, 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
+    }
+    h1 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 8px; }
+    p { margin: 8px 0 20px; color: var(--muted); line-height: 1.6; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      appearance: none; border: 0; cursor: pointer;
+      padding: 12px 16px; border-radius: 12px; font-weight: 600;
+    }
+    .btn.primary { background: var(--accent); color: #0b1220; }
+    .btn.ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.18); }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 22px; }
+    .feature { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 14px; }
+    .feature h3 { margin: 0 0 6px; font-size: 16px; }
+    .footer { margin-top: 22px; font-size: 12px; color: var(--muted); text-align: center; }
+    a { color: var(--accent); text-decoration: none; }
+    a:focus, .btn:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
 </head>
-<body class="min-h-screen flex flex-col bg-white text-stone-900">
-  <header class="sticky top-0 z-40  bg-white">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between">
-        <a href="#" class="text-lg font-extrabold tracking-tight flex items-center gap-2">
-          <img src="infinigate-logo-2.png" alt="Infinigate logo" class="h-7 w-auto"/>
-          <span>Infinigate • One Plant Campaign</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-          <a href="#about" class="hover:text-green-700">About</a>
-          <a href="#principles" class="hover:text-green-700">Principles</a>
-          <a href="#actions" class="hover:text-green-700">Take action</a>
-          <a href="#impact" class="hover:text-green-700">Impact</a>
-          <a href="#governance" class="hover:text-green-700">Governance</a>
-          <a href="#faqs" class="hover:text-green-700">FAQs</a>
-        </nav>
-        <div class="flex items-center gap-2">
-          <a href="#pledge" class="inline-flex items-center gap-2 rounded-2xl bg-green-700 px-4 py-2 text-white text-sm font-semibold shadow hover:bg-green-800">Pledge a Plant</a>
-        </div>
-      </div>
-    </div>
-  </header>
+<body>
+  <main class="card" role="main">
+    <header>
+      <h1>Welcome 👋</h1>
+      <p>A clean, simple HTML starter you can drop into S3/CloudFront or GitHub Pages. Edit the text, swap colors, and you’re live.</p>
+    </header>
 
-  <main class="flex-1">
-
-  <!-- Hero section -->
-  <section class="relative overflow-hidden bg-white">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-      <div class="grid lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-7">
-          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
-            Grow one plant. Donate one plant.
-            <span class="block text-green-700">Multiply hope, one pot at a time.</span>
-          </h1>
-          <p class="mt-6 text-lg text-stone-700 max-w-2xl">Infinigate invites you to join a simple movement with outsized benefits. Grow a plant at home or donate one to a school, shelter, or community garden. Together we can cool cities, clean air, and brighten lives.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="#pledge" class="inline-flex items-center rounded-xl bg-green-700 px-4 py-2 text-white text-sm md:text-base font-semibold shadow hover:bg-green-800">Make my pledge</a>
-            <a href="#pledge" class="inline-flex items-center rounded-xl bg-white px-4 py-2 text-sm md:text-base font-semibold shadow hover:shadow-md">How it works</a>
-          </div>
-        </div>
-      </div>
+    <div class="actions">
+      <button class="btn primary" onclick="alert('Primary action clicked!')">Get Started</button>
+      <a class="btn ghost" href="#learn">Learn more</a>
     </div>
-  </section>
+
+    <section class="features" id="learn" aria-label="Key features">
+      <div class="feature">
+        <h3>Fast</h3>
+        <p>No frameworks required—just pure HTML/CSS for instant loads.</p>
+      </div>
+      <div class="feature">
+        <h3>Responsive</h3>
+        <p>Looks great on phones, tablets, and desktops out of the box.</p>
+      </div>
+      <div class="feature">
+        <h3>Accessible</h3>
+        <p>Semantic tags and focus styles help keyboard and screen-reader users.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Made with ❤️ · <a href="https://example.com">example.com</a></span>
+    </footer>
   </main>
-
-  <footer role="contentinfo" class="mt-auto bg-white">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p class="text-sm text-stone-600">© 2025 Infinigate • One Plant Campaign. All rights reserved.</p>
-        <nav class="text-sm text-stone-600 flex items-center gap-6">
-          <a href="#governance" class="hover:text-stone-900">Governance</a>
-          <a href="#impact" class="hover:text-stone-900">Impact</a>
-          <a href="#faqs" class="hover:text-stone-900">FAQs</a>
-        </nav>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year')?.remove();
-  </script>
 </body>
 </html>
